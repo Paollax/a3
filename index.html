@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Fractais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <aside id="sidebar">
+            <h1>Visualizador de Fractais</h1>
+            
+            <div class="controles">
+                <label for="selectFractal">Fractal:</label>
+                <select id="selectFractal" name="fractal">
+                    <option value="sierpinski">Triângulo de Sierpinski</option>
+                    <option value="koch">Floco de Neve de Koch</option>
+                    <option value="pitagoras">Árvore de Pitágoras</option>
+                    <option value="dragao">Curva do Dragão</option>
+                </select>
+                
+                <label for="sliderIteracao">Nível:</label>
+                <input type="range" id="sliderIteracao" name="iteracao" min="0" max="8" value="0">
+                <span id="valorSlider">0</span>
+            </div>
+
+            <div class="animation-controls">
+                <button id="playButton">Play ▶</button>
+                <div class="speed-control">
+                    <label for="speedSlider">Velocidade:</label>
+                    <input type="range" id="speedSlider" min="200" max="2000" value="1000" step="100">
+                    <span id="speedValue">1.0s</span>
+                </div>
+            </div>
+
+            <section class="informacoes">
+                <h3 id="infoTitulo">...</h3>
+                <p id="infoDescricao">...</p>
+                <hr>
+                <h4>Matemática (Nível <span id="infoNivel">0</span>)</h4>
+                
+                <div class="info-bloco">
+                    <strong>Perímetro:</strong>
+                    <p id="infoPerimetroFormula" class="formula">...</p>
+                    <p id="infoPerimetroLimite" class="limite">...</p>
+                </div>
+
+                <div class="info-bloco">
+                    <strong>Área:</strong>
+                    <p id="infoAreaFormula" class="formula">...</p>
+                    <p id="infoAreaLimite" class="limite">...</p>
+                </div>
+
+                <div class="info-bloco">
+                    <strong>Dimensão Fractal:</strong>
+                    <p id="infoDimensaoFormula" class="formula">...</p>
+                    <p id="infoDimensaoLimite" class="limite">...</p>
+                </div>
+            </section>
+
+            <section class="informacoes" id="aplicacoes">
+                <h3 id="aplicacoesTitulo">Aplicações no Mundo Real</h3>
+                
+                <div id="aplicacoesConteudo">
+                    <p>Selecione um fractal para ver suas aplicações práticas.</p>
+                </div>
+            </section>
+
+        </aside>
+
+        <main id="content">
+            <canvas id="fractalCanvas" width="700" height="700"></canvas>
+        </main>
+
+    </div> <script src="script.js"></script>
+</body>
+</html>
